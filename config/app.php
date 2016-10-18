@@ -181,6 +181,6 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
     ],
-    'ALLOWED_CHARS' => '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ',
-    'BASE_HREF' => 'http://' . $_SERVER['HTTP_HOST'] . '/url/'
+
+     'domain' => 'http://local.pruebachallenge/'
 ];

@@ -11,8 +11,19 @@
 |
 */
 
-
 Route::auth();
 
-Route::get('/', 'HomeController@index');
-Route::post('/search', 'HomeController@postSearch');
+    Route::get('/', [
+        'as'   => 'home',
+        'uses' => 'LinksController@index'
+    ]);
+
+    Route::get('/{hash}', [
+       'as' => 'hash',
+       'uses' => 'LinksController@redirect'
+    ]);
+
+    Route::post('save', [
+        'as'   => 'save',
+        'uses' => 'LinksController@saveLink'
+    ]);
