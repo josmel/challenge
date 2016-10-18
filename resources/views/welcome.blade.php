@@ -29,10 +29,6 @@
                 <input type="text" name="url" id="url" class="form-control"
                        placeholder="http://tu-website.com"
                        value="@if(session()->has('link')) {{ config('app.domain') . session()->get('link') }} @endif">
-                @if ($errors->has('url'))
-                <span class="help-block">
-                    <strong>{{ $errors->first('url') }}</strong>
-                </span>
                 @endif
                 <span class="input-group-btn">
                     @if (session()->has('link'))
