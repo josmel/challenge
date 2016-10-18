@@ -29,7 +29,6 @@
                 <input type="text" name="url" id="url" class="form-control"
                        placeholder="http://tu-website.com"
                        value="@if(session()->has('link')) {{ config('app.domain') . session()->get('link') }} @endif">
-                @endif
                 <span class="input-group-btn">
                     @if (session()->has('link'))
                     <button class="btn btn-warning btn-lg clipboard" data-clipboard-target="#url" type="button">
