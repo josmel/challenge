@@ -44,9 +44,9 @@ class HomeController extends Controller {
 
         if (!empty($url_to_shorten) && preg_match('|^https?://|', $url_to_shorten)) {
 
-
             // VALIDAR URL
             if (true) {
+                
                 $ch = curl_init();
                 curl_setopt($ch, CURLOPT_URL, $url_to_shorten);
                 curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
@@ -84,13 +84,14 @@ class HomeController extends Controller {
     }
 
     function getShortenedURLFromID($integer) {
+        
         $length = strlen($this->allowed);
-        dd($integer);
-        while ($integer > $length - 1) {echo 4;exit;
+//       while ($integer > $length - 1) {echo 4;exit;
             $out = $this->allowed[fmod($integer, $length)] . $out;
+          
             $integer = floor($integer / $length);
-        } echo 5;exit;
-        dd();
+//        } 
+        dd($this->allowed[$integer]. $out);
         return $this->allowed[$integer] . $out;
     }
 
